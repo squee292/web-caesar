@@ -18,11 +18,11 @@ form = """
                 font: 16px sans-serif;
                 border-radius: 10px;
             }
-            textarea{{
+            textarea{
                 margin: 10px 0;
                 width: 540px;
                 height: 120px;
-            }}
+            }
         </style>
     </head>
     <body>
@@ -30,7 +30,7 @@ form = """
         <label for="rot">Rotate by:</label>
         <input type="text" name="rot" id="rot" value=0><br>
         <textarea name= "textarea">{0}</textarea><br>
-        <input type="submit" value="Submit Query"
+        <input type="submit" value="Submit Query">
         </form>
     </body>
 </html>
@@ -38,7 +38,8 @@ form = """
 
 @app.route("/")
 def index():
-    return form.format('')
+    start = ''
+    return form.format(start)
 
 @app.route("/", methods=['POST'])
 def encrypt():
